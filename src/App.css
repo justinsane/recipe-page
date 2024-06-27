@@ -1,0 +1,52 @@
+/* src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: hsl(30, 54%, 90%);
+}
+
+p {
+  font-size: 16px;
+  @apply font-outfit;
+}
+
+.custom-h2 {
+  @apply text-3xl font-serif text-nutmeg;
+}
+
+.custom-ordered-list li::marker {
+  @apply text-nutmeg font-bold;
+}
+
+.custom-ordered-list {
+  counter-reset: item;
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-ordered-list li {
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.custom-ordered-list li::before {
+  content: counter(item) '.';
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  color: #8b4513;
+}
+
+.custom-ordered-list .bold-span {
+  display: inline-block;
+  width: rem;
+}
